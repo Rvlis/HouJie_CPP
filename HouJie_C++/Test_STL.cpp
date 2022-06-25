@@ -250,6 +250,174 @@ namespace jj05 {
 	}
 }
 
+#include <set>
+// 关联容器（查找速度快），multiset, 可以存在重复元素，内部实现：（看编译器）一般为红黑树
+namespace jj06 {
+	void test_multiset(long& value) {
+		cout << "\ntest_multiset...\n";
+		multiset<string> c;
+		clock_t timeStart = clock();
+		for (long i = 0; i < value; i++) {
+			try {
+				c.insert(to_string(rand()));
+			}
+			catch (exception& e) {
+				cout << "i=" << e.what() << endl;
+			}
+		}
+		cout << "milli-seconds: " << clock() - timeStart << endl;
+		cout << "multiset.size(): " << c.size() << endl;
+		cout << "multiset.max_size(): " << c.max_size() << endl;
+
+		string target = get_a_target_string();
+		{
+			timeStart = clock();
+			auto pItem = ::find(c.begin(), c.end(), target);
+			cout << "::find(), milli-seconds: " << clock() - timeStart << endl;
+			if (pItem != c.end()) {
+				cout << "Found: " << *pItem << endl;
+			}
+			else {
+				cout << "Not found!" << endl;
+			}
+		}
+		{
+			timeStart = clock();
+			auto pItem = c.find(target);
+			cout << "c.find(), milli-seconds: " << clock() - timeStart << endl;
+			if (pItem != c.end()) {
+				cout << "Found: " << *pItem << endl;
+			}
+			else {
+				cout << "Not found!" << endl;
+			}
+		}
+	}
+}
+
+#include <map>
+// 关联容器（查找速度快），multimap, 内部实现：（看编译器）一般为红黑树
+namespace jj07 {
+	void test_multimap(long& value) {
+		cout << "\ntest_multimap...\n";
+		multimap<long, string> c;
+		clock_t timeStart = clock();
+		for (long i = 0; i < value; i++) {
+			try {
+				c.insert(pair<long, string>(i, to_string(rand())));
+			}
+			catch (exception& e) {
+				cout << "i=" << e.what() << endl;
+			}
+		}
+		cout << "milli-seconds: " << clock() - timeStart << endl;
+		cout << "multiset.size(): " << c.size() << endl;
+		cout << "multiset.max_size(): " << c.max_size() << endl;
+
+		long target = get_a_target_long();
+		{
+			timeStart = clock();
+			auto pItem = c.find(target);
+			cout << "c.find(), milli-seconds: " << clock() - timeStart << endl;
+			if (pItem != c.end()) {
+				cout << "Found: " << (*pItem).second << endl;
+			}
+			else {
+				cout << "Not found!" << endl;
+			}
+		}
+	}
+}
+
+#include <unordered_set>
+// unordered_multiset, 内部实现：hash_table
+
+namespace jj08 {
+	void test_unordered_multiset(long& value) {
+		cout << "\ntest_unordered_multiset...\n";
+		unordered_multiset<string> c;
+		clock_t timeStart = clock();
+		for (long i = 0; i < value; i++) {
+			try {
+				c.insert(to_string(rand()));
+			}
+			catch (exception& e) {
+				cout << "i=" << e.what() << endl;
+			}
+		}
+		cout << "milli-seconds: " << clock() - timeStart << endl;
+		cout << "unordered_multiset.size(): " << c.size() << endl;
+		cout << "unordered_multiset.max_size(): " << c.max_size() << endl;
+		// bucket_count, hash_table中地址个数
+		cout << "unordered_multiset.bucket_count(): " << c.bucket_count() << endl;
+		cout << "unordered_multiset.load_factor(): " << c.load_factor() << endl;
+		cout << "unordered_multiset.max_load_factor(): " << c.max_load_factor() << endl;
+		cout << "unordered_multiset.max_bucket_count(): " << c.max_bucket_count() << endl;
+
+		for (unsigned i = 0; i < 20; i++) {
+			cout << "bucket #" << i << " has " << c.bucket_size(i) << " elements." << endl;
+		}
+
+		string target = get_a_target_string();
+		{
+			timeStart = clock();
+			auto pItem = ::find(c.begin(), c.end(), target);
+			cout << "::find(), milli-seconds: " << clock() - timeStart << endl;
+			if (pItem != c.end()) {
+				cout << "Found: " << *pItem << endl;
+			}
+			else {
+				cout << "Not found!" << endl;
+			}
+		}
+		{
+			timeStart = clock();
+			auto pItem = c.find(target);
+			cout << "c.find(), milli-seconds: " << clock() - timeStart << endl;
+			if (pItem != c.end()) {
+				cout << "Found: " << *pItem << endl;
+			}
+			else {
+				cout << "Not found!" << endl;
+			}
+		}
+	}
+}
+
+#include <unordered_map>
+// unordered_multimap, 内部实现：hash_table
+namespace jj09 {
+	void test_unordered_multimap(long& value) {
+		cout << "\ntest_unordered_multimap...\n";
+		unordered_multimap<long, string> c;
+		clock_t timeStart = clock();
+		for (long i = 0; i < value; i++) {
+			try {
+				c.insert(pair<long, string>(i, to_string(rand())));
+			}
+			catch (exception& e) {
+				cout << "i=" << e.what() << endl;
+			}
+		}
+		cout << "milli-seconds: " << clock() - timeStart << endl;
+		cout << "unordered_multiset.size(): " << c.size() << endl;
+		cout << "unordered_multiset.max_size(): " << c.max_size() << endl;
+
+		long target = get_a_target_long();
+		{
+			timeStart = clock();
+			auto pItem = c.find(target);
+			cout << "c.find(), milli-seconds: " << clock() - timeStart << endl;
+			if (pItem != c.end()) {
+				cout << "Found: " << (*pItem).second << endl;
+			}
+			else {
+				cout << "Not found!" << endl;
+			}
+		}
+	}
+}
+
 #include <stack>
 // stack 内部容器deque，严格来讲不算容器，而是容器的适配器adapter
 namespace jj17 {
@@ -306,12 +474,14 @@ namespace jj18 {
 
 void showmenu()
 {
-	cout << "please enter: 1, 2, 3, 4, 5, 17, 18\n"
+	cout << "please enter: 1, 2, 3, 4, 5, 6, 17, 18\n"
 		"0)quit\n"
 		"1)test_array\t2)test_vector\n"
 		"3)test_list\t4)test_forward_list\n"
-		"5)test_deque\t17)test_stack\n"
-		"18)test_queue\n";
+		"5)test_deque\t6)test_multiset\n"
+		"7)test_multimap\t8)test_unordered_multiset\n"
+		"9)test_unordered_multimap\t10) \n"
+		"17)test_stack\t18)test_queue\n";
 }
 
 
@@ -355,6 +525,38 @@ int main() {
 			cout << "elements number: ";
 			cin >> value5;
 			jj05::test_deque(value5);
+			break;
+
+		case 6:
+			cout << "select: " << choice << endl;
+			long value6;
+			cout << "elements number: ";
+			cin >> value6;
+			jj06::test_multiset(value6);
+			break;
+
+		case 7:
+			cout << "select: " << choice << endl;
+			long value7;
+			cout << "elements number: ";
+			cin >> value7;
+			jj07::test_multimap(value7);
+			break;
+
+		case 8:
+			cout << "select: " << choice << endl;
+			long value8;
+			cout << "elements number: ";
+			cin >> value8;
+			jj08::test_unordered_multiset(value8);
+			break;
+
+		case 9:
+			cout << "select: " << choice << endl;
+			long value9;
+			cout << "elements number: ";
+			cin >> value9;
+			jj09::test_unordered_multimap(value9);
 			break;
 
 		case 17:
