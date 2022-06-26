@@ -15,9 +15,10 @@ void print(const T& firstArg, const Types&... args) {
 
 //int main() {
 //	print(7.5, "hello", bitset<16>(377), 42);
-//	
+//	//C++11新特性
 //	//ranged-based for
 //	vector<double> vec = { 1.1, 2.2, 3.3, 4.4 };
+//	//auto关键字
 //	for (auto v : vec) {
 //		cout << v << endl;
 //	}

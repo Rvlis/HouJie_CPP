@@ -1,3 +1,7 @@
+//STL(standard template libary):标准模板库
+//六大部件：Containers（容器） Allocators（分配器） Algorithms（算法） Iterators（迭代器） Adapters（适配器） Functions（仿函数）
+
+//Containers（容器）:
 //sequence container（顺序容器）: array/vector/deque/list/forward-list
 //associative container（关联容器）: set/multiset map/multimap: 内部实现看编译器，一般为红黑树（高度平衡二叉树）
 //unordered container（本质上属于关联容器） : hashtable seperate chaining
@@ -304,6 +308,7 @@ namespace jj07 {
 		clock_t timeStart = clock();
 		for (long i = 0; i < value; i++) {
 			try {
+				// multimap 不可以使用[]作insert
 				c.insert(pair<long, string>(i, to_string(rand())));
 			}
 			catch (exception& e) {
@@ -311,8 +316,8 @@ namespace jj07 {
 			}
 		}
 		cout << "milli-seconds: " << clock() - timeStart << endl;
-		cout << "multiset.size(): " << c.size() << endl;
-		cout << "multiset.max_size(): " << c.max_size() << endl;
+		cout << "multimap.size(): " << c.size() << endl;
+		cout << "multimap.max_size(): " << c.max_size() << endl;
 
 		long target = get_a_target_long();
 		{
@@ -343,6 +348,7 @@ namespace jj08 {
 			}
 			catch (exception& e) {
 				cout << "i=" << e.what() << endl;
+				abort();
 			}
 		}
 		cout << "milli-seconds: " << clock() - timeStart << endl;
@@ -397,11 +403,188 @@ namespace jj09 {
 			}
 			catch (exception& e) {
 				cout << "i=" << e.what() << endl;
+				abort();
 			}
 		}
 		cout << "milli-seconds: " << clock() - timeStart << endl;
-		cout << "unordered_multiset.size(): " << c.size() << endl;
-		cout << "unordered_multiset.max_size(): " << c.max_size() << endl;
+		cout << "unordered_multimap.size(): " << c.size() << endl;
+		cout << "unordered_multimap.max_size(): " << c.max_size() << endl;
+
+		long target = get_a_target_long();
+		{
+			timeStart = clock();
+			auto pItem = c.find(target);
+			cout << "c.find(), milli-seconds: " << clock() - timeStart << endl;
+			if (pItem != c.end()) {
+				cout << "Found: " << (*pItem).second << endl;
+			}
+			else {
+				cout << "Not found!" << endl;
+			}
+		}
+	}
+}
+
+#include <set>
+// set,元素唯一，内部实现：（看编译器）一般为红黑树
+namespace jj13 {
+	void test_set(long& value) {
+		cout << "\ntest_set...\n";
+		set<string> c;
+		clock_t timeStart = clock();
+		for (long i = 0; i < value; i++) {
+			try {
+				c.insert(to_string(rand()));
+			}
+			catch (exception& e) {
+				cout << "i=" << e.what() << endl;
+				abort();
+			}
+		}
+		cout << "milli-seconds: " << clock() - timeStart << endl;
+		cout << "set.size(): " << c.size() << endl;
+		cout << "set.max_size(): " << c.max_size() << endl;
+
+		string target = get_a_target_string();
+		{
+			timeStart = clock();
+			auto pItem = ::find(c.begin(), c.end(), target);
+			cout << "::find(), milli-seconds: " << clock() - timeStart << endl;
+			if (pItem != c.end()) {
+				cout << "Found: " << *pItem << endl;
+			}
+			else {
+				cout << "Not found!" << endl;
+			}
+		}
+		{
+			timeStart = clock();
+			auto pItem = c.find(target);
+			cout << "c.find(), milli-seconds: " << clock() - timeStart << endl;
+			if (pItem != c.end()) {
+				cout << "Found: " << *pItem << endl;
+			}
+			else {
+				cout << "Not found!" << endl;
+			}
+		}
+	}
+}
+
+#include <map>
+// map, 内部实现：（看编译器）一般为红黑树
+namespace jj14 {
+	void test_map(long& value) {
+		cout << "\ntest_map...\n";
+		map<long, string> c;
+		clock_t timeStart = clock();
+		for (long i = 0; i < value; i++) {
+			try {
+				// multimap 不可以使用[]作insert
+				// map可以直接使用[]作insert
+				//c.insert(pair<long, string>(i, to_string(rand())));
+				c[i] = to_string(rand());
+			}
+			catch (exception& e) {
+				cout << "i=" << e.what() << endl;
+				abort();
+			}
+		}
+		cout << "milli-seconds: " << clock() - timeStart << endl;
+		cout << "map.size(): " << c.size() << endl;
+		cout << "map.max_size(): " << c.max_size() << endl;
+
+		long target = get_a_target_long();
+		{
+			timeStart = clock();
+			auto pItem = c.find(target);
+			cout << "c.find(), milli-seconds: " << clock() - timeStart << endl;
+			if (pItem != c.end()) {
+				cout << "Found: " << (*pItem).second << endl;
+			}
+			else {
+				cout << "Not found!" << endl;
+			}
+		}
+	}
+}
+
+#include <unordered_set>
+// unordered_set, 内部实现：hash_table
+
+namespace jj15 {
+	void test_unordered_set(long& value) {
+		cout << "\ntest_unordered_set...\n";
+		unordered_set<string> c;
+		clock_t timeStart = clock();
+		for (long i = 0; i < value; i++) {
+			try {
+				c.insert(to_string(rand()));
+			}
+			catch (exception& e) {
+				cout << "i=" << e.what() << endl;
+				abort();
+			}
+		}
+		cout << "milli-seconds: " << clock() - timeStart << endl;
+		cout << "unordered_set.size(): " << c.size() << endl;
+		cout << "unordered_set.max_size(): " << c.max_size() << endl;
+		// bucket_count, hash_table中地址个数
+		cout << "unordered_set.bucket_count(): " << c.bucket_count() << endl;
+		cout << "unordered_set.load_factor(): " << c.load_factor() << endl;
+		cout << "unordered_set.max_load_factor(): " << c.max_load_factor() << endl;
+		cout << "unordered_set.max_bucket_count(): " << c.max_bucket_count() << endl;
+
+		for (unsigned i = 0; i < 20; i++) {
+			cout << "bucket #" << i << " has " << c.bucket_size(i) << " elements." << endl;
+		}
+
+		string target = get_a_target_string();
+		{
+			timeStart = clock();
+			auto pItem = ::find(c.begin(), c.end(), target);
+			cout << "::find(), milli-seconds: " << clock() - timeStart << endl;
+			if (pItem != c.end()) {
+				cout << "Found: " << *pItem << endl;
+			}
+			else {
+				cout << "Not found!" << endl;
+			}
+		}
+		{
+			timeStart = clock();
+			auto pItem = c.find(target);
+			cout << "c.find(), milli-seconds: " << clock() - timeStart << endl;
+			if (pItem != c.end()) {
+				cout << "Found: " << *pItem << endl;
+			}
+			else {
+				cout << "Not found!" << endl;
+			}
+		}
+	}
+}
+
+#include <unordered_map>
+// unordered_map, 内部实现：hash_table
+namespace jj16 {
+	void test_unordered_map(long& value) {
+		cout << "\ntest_unordered_map...\n";
+		unordered_map<long, string> c;
+		clock_t timeStart = clock();
+		for (long i = 0; i < value; i++) {
+			try {
+				//c.insert(pair<long, string>(i, to_string(rand())));
+				c[i] = to_string(rand());
+			}
+			catch (exception& e) {
+				cout << "i=" << e.what() << endl;
+				abort();
+			}
+		}
+		cout << "milli-seconds: " << clock() - timeStart << endl;
+		cout << "unordered_map.size(): " << c.size() << endl;
+		cout << "unordered_map.max_size(): " << c.max_size() << endl;
 
 		long target = get_a_target_long();
 		{
@@ -474,14 +657,16 @@ namespace jj18 {
 
 void showmenu()
 {
-	cout << "please enter: 1, 2, 3, 4, 5, 6, 17, 18\n"
+	cout << "please enter:\n"
 		"0)quit\n"
-		"1)test_array\t2)test_vector\n"
-		"3)test_list\t4)test_forward_list\n"
-		"5)test_deque\t6)test_multiset\n"
-		"7)test_multimap\t8)test_unordered_multiset\n"
-		"9)test_unordered_multimap\t10) \n"
-		"17)test_stack\t18)test_queue\n";
+		"1)test_array					2)test_vector\n"
+		"3)test_list					4)test_forward_list\n"
+		"5)test_deque					6)test_multiset\n"
+		"7)test_multimap					8)test_unordered_multiset\n"
+		"9)test_unordered_multimap			10)test_ \n"
+		"13)test_set					14)test_map\n"
+		"15)test_unordered_set				16)test_unordered_map\n"
+		"17)test_stack					18)test_queue\n";
 }
 
 
@@ -559,6 +744,38 @@ int main() {
 			jj09::test_unordered_multimap(value9);
 			break;
 
+		case 13:
+			cout << "select: " << choice << endl;
+			long value13;
+			cout << "elements number: ";
+			cin >> value13;
+			jj13::test_set(value13);
+			break;
+
+		case 14:
+			cout << "select: " << choice << endl;
+			long value14;
+			cout << "elements number: ";
+			cin >> value14;
+			jj14::test_map(value14);
+			break;
+
+		case 15:
+			cout << "select: " << choice << endl;
+			long value15;
+			cout << "elements number: ";
+			cin >> value15;
+			jj15::test_unordered_set(value15);
+			break;
+
+		case 16:
+			cout << "select: " << choice << endl;
+			long value16;
+			cout << "elements number: ";
+			cin >> value16;
+			jj16::test_unordered_map(value16);
+			break;
+
 		case 17:
 			cout << "select: " << choice << endl;
 			long value17;
@@ -577,7 +794,10 @@ int main() {
 
 		default:
 			cout << "quit." << endl;
+			break;
 		}
+		cout << "Select choice: ";
+		cin >> choice;
 	}
 	return 0;
 }
