@@ -670,134 +670,134 @@ void showmenu()
 }
 
 
-int main() {
-	showmenu();
-	int choice;
-	cin >> choice;
-	while (choice != 0) {
-		switch (choice) {
-		case 1:
-			cout << "select: " << choice << endl;
-			jj01::test_array();
-			break;
-		case 2:
-			cout << "select: " << choice << endl;
-			long value2;
-			cout << "elements number:";
-			cin >> value2;
-			jj02::test_vector(value2);
-			break;
-
-		case 3:
-			cout << "select: " << choice << endl;
-			long value3;
-			cout << "elements number: ";
-			cin >> value3;
-			jj03::test_list(value3);
-			break;
-
-		case 4:
-			cout << "select: " << choice << endl;
-			long value4;
-			cout << "elements number: ";
-			cin >> value4;
-			jj04::test_forward_list(value4);
-			break;
-
-		case 5:
-			cout << "select: " << choice << endl;
-			long value5;
-			cout << "elements number: ";
-			cin >> value5;
-			jj05::test_deque(value5);
-			break;
-
-		case 6:
-			cout << "select: " << choice << endl;
-			long value6;
-			cout << "elements number: ";
-			cin >> value6;
-			jj06::test_multiset(value6);
-			break;
-
-		case 7:
-			cout << "select: " << choice << endl;
-			long value7;
-			cout << "elements number: ";
-			cin >> value7;
-			jj07::test_multimap(value7);
-			break;
-
-		case 8:
-			cout << "select: " << choice << endl;
-			long value8;
-			cout << "elements number: ";
-			cin >> value8;
-			jj08::test_unordered_multiset(value8);
-			break;
-
-		case 9:
-			cout << "select: " << choice << endl;
-			long value9;
-			cout << "elements number: ";
-			cin >> value9;
-			jj09::test_unordered_multimap(value9);
-			break;
-
-		case 13:
-			cout << "select: " << choice << endl;
-			long value13;
-			cout << "elements number: ";
-			cin >> value13;
-			jj13::test_set(value13);
-			break;
-
-		case 14:
-			cout << "select: " << choice << endl;
-			long value14;
-			cout << "elements number: ";
-			cin >> value14;
-			jj14::test_map(value14);
-			break;
-
-		case 15:
-			cout << "select: " << choice << endl;
-			long value15;
-			cout << "elements number: ";
-			cin >> value15;
-			jj15::test_unordered_set(value15);
-			break;
-
-		case 16:
-			cout << "select: " << choice << endl;
-			long value16;
-			cout << "elements number: ";
-			cin >> value16;
-			jj16::test_unordered_map(value16);
-			break;
-
-		case 17:
-			cout << "select: " << choice << endl;
-			long value17;
-			cout << "elements number: ";
-			cin >> value17;
-			jj17::test_stack(value17);
-			break;
-
-		case 18:
-			cout << "select: " << choice << endl;
-			long value18;
-			cout << "elements number: ";
-			cin >> value18;
-			jj18::test_queue(value18);
-			break;
-
-		default:
-			cout << "quit." << endl;
-			break;
-		}
-		cout << "Select choice: ";
-		cin >> choice;
-	}
-	return 0;
-}
+//int main() {
+//	showmenu();
+//	int choice;
+//	cin >> choice;
+//	while (choice != 0) {
+//		switch (choice) {
+//		case 1:
+//			cout << "select: " << choice << endl;
+//			jj01::test_array();
+//			break;
+//		case 2:
+//			cout << "select: " << choice << endl;
+//			long value2;
+//			cout << "elements number:";
+//			cin >> value2;
+//			jj02::test_vector(value2);
+//			break;
+//
+//		case 3:
+//			cout << "select: " << choice << endl;
+//			long value3;
+//			cout << "elements number: ";
+//			cin >> value3;
+//			jj03::test_list(value3);
+//			break;
+//
+//		case 4:
+//			cout << "select: " << choice << endl;
+//			long value4;
+//			cout << "elements number: ";
+//			cin >> value4;
+//			jj04::test_forward_list(value4);
+//			break;
+//
+//		case 5:
+//			cout << "select: " << choice << endl;
+//			long value5;
+//			cout << "elements number: ";
+//			cin >> value5;
+//			jj05::test_deque(value5);
+//			break;
+//
+//		case 6:
+//			cout << "select: " << choice << endl;
+//			long value6;
+//			cout << "elements number: ";
+//			cin >> value6;
+//			jj06::test_multiset(value6);
+//			break;
+//
+//		case 7:
+//			cout << "select: " << choice << endl;
+//			long value7;
+//			cout << "elements number: ";
+//			cin >> value7;
+//			jj07::test_multimap(value7);
+//			break;
+//
+//		case 8:
+//			cout << "select: " << choice << endl;
+//			long value8;
+//			cout << "elements number: ";
+//			cin >> value8;
+//			jj08::test_unordered_multiset(value8);
+//			break;
+//
+//		case 9:
+//			cout << "select: " << choice << endl;
+//			long value9;
+//			cout << "elements number: ";
+//			cin >> value9;
+//			jj09::test_unordered_multimap(value9);
+//			break;
+//
+//		case 13:
+//			cout << "select: " << choice << endl;
+//			long value13;
+//			cout << "elements number: ";
+//			cin >> value13;
+//			jj13::test_set(value13);
+//			break;
+//
+//		case 14:
+//			cout << "select: " << choice << endl;
+//			long value14;
+//			cout << "elements number: ";
+//			cin >> value14;
+//			jj14::test_map(value14);
+//			break;
+//
+//		case 15:
+//			cout << "select: " << choice << endl;
+//			long value15;
+//			cout << "elements number: ";
+//			cin >> value15;
+//			jj15::test_unordered_set(value15);
+//			break;
+//
+//		case 16:
+//			cout << "select: " << choice << endl;
+//			long value16;
+//			cout << "elements number: ";
+//			cin >> value16;
+//			jj16::test_unordered_map(value16);
+//			break;
+//
+//		case 17:
+//			cout << "select: " << choice << endl;
+//			long value17;
+//			cout << "elements number: ";
+//			cin >> value17;
+//			jj17::test_stack(value17);
+//			break;
+//
+//		case 18:
+//			cout << "select: " << choice << endl;
+//			long value18;
+//			cout << "elements number: ";
+//			cin >> value18;
+//			jj18::test_queue(value18);
+//			break;
+//
+//		default:
+//			cout << "quit." << endl;
+//			break;
+//		}
+//		cout << "Select choice: ";
+//		cin >> choice;
+//	}
+//	return 0;
+//}

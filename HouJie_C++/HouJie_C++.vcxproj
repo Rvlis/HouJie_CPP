@@ -147,10 +147,14 @@
     <ClCompile Include="conversion_function.cpp" />
     <ClCompile Include="function_template.cpp" />
     <ClCompile Include="namespace.cpp" />
+    <ClCompile Include="operator_override.cpp" />
     <ClCompile Include="static_account.cpp" />
     <ClCompile Include="string-test.cpp" />
     <ClCompile Include="Test_STL.cpp" />
     <ClCompile Include="variadic_templates.cpp" />
+    <ClCompile Include="继承中同名成员处理.cpp" />
+    <ClCompile Include="继承方式.cpp" />
+    <ClCompile Include="菱形继承和虚继承.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
