@@ -25,7 +25,7 @@ void ltest01() {
 	cout << yt.m_Age << endl;
 }
 
-int main() {
-	ltest01();
-	return 0;
-}
+//int main() {
+//	ltest01();
+//	return 0;
+//}
