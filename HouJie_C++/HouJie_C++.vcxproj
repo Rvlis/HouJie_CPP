@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="complex.h" />
+    <ClInclude Include="complex.hpp" />
     <ClInclude Include="string.h" />
   </ItemGroup>
   <ItemGroup>
@@ -152,9 +152,13 @@
     <ClCompile Include="string-test.cpp" />
     <ClCompile Include="Test_STL.cpp" />
     <ClCompile Include="variadic_templates.cpp" />
+    <ClCompile Include="二进制文件-写文件.cpp" />
     <ClCompile Include="多态.cpp" />
     <ClCompile Include="文本文件-写文件.cpp" />
     <ClCompile Include="文本文件-读文件.cpp" />
+    <ClCompile Include="类模板与继承.cpp" />
+    <ClCompile Include="类模板对象作函数参数.cpp" />
+    <ClCompile Include="类模板成员函数类外实现.cpp" />
     <ClCompile Include="纯虚函数和抽象类.cpp" />
     <ClCompile Include="继承中同名成员处理.cpp" />
     <ClCompile Include="继承方式.cpp" />

@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="complex.h">
+    <ClInclude Include="string.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="string.h">
+    <ClInclude Include="complex.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -72,6 +72,18 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="文本文件-读文件.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="二进制文件-写文件.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="类模板对象作函数参数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="类模板与继承.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="类模板成员函数类外实现.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

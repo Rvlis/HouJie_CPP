@@ -40,7 +40,7 @@ void test005() {
 	ifs.close();
 }
 
-int main() {
-	test005();
-	return 0;
-}
+//int main() {
+//	test005();
+//	return 0;
+//}

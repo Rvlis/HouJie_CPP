@@ -11,12 +11,14 @@ public:
 	complex(T r = 0, T i = 0) :re(r), im(i) {}
 	// 以下构造函数重载不可，因为上面已经存在默认值
 	// complex(): re(0), im(0) {}	//重载，overloading
-	complex& operator += (const complex&);
+	complex<T>& operator += (const complex<T>&);
 	T real() const { return re; }
 	T imag() const { return im; }
 private:
 	T re, im;
-	friend complex& __doapl(complex*, const complex&);
+
+	template<typename T>
+	friend complex<T>& __doapl(complex<T>*, const complex<T>&);
 };
 
 template<typename T>
