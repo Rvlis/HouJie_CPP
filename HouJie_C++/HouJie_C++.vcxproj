@@ -146,6 +146,8 @@
     <ClCompile Include="complex-test.cpp" />
     <ClCompile Include="conversion_function.cpp" />
     <ClCompile Include="function_template.cpp" />
+    <ClCompile Include="LRU-使用list+iterator.cpp" />
+    <ClCompile Include="LRU-手写双向链表.cpp" />
     <ClCompile Include="namespace.cpp" />
     <ClCompile Include="operator_override.cpp" />
     <ClCompile Include="static_account.cpp" />
