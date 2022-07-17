@@ -163,6 +163,7 @@
     <ClCompile Include="仿函数-谓词-一元谓词.cpp" />
     <ClCompile Include="函数对象（仿函数）.cpp" />
     <ClCompile Include="多态.cpp" />
+    <ClCompile Include="常用排序算法.cpp" />
     <ClCompile Include="文本文件-写文件.cpp" />
     <ClCompile Include="文本文件-读文件.cpp" />
     <ClCompile Include="查找算法.cpp" />
@@ -175,6 +176,7 @@
     <ClCompile Include="菱形继承和虚继承.cpp" />
     <ClCompile Include="虚析构和纯虚析构.cpp" />
     <ClCompile Include="遍历算法.cpp" />
+    <ClCompile Include="集合算法交集-并集-差集.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

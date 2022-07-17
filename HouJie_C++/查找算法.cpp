@@ -77,9 +77,27 @@ void FindTest03() {
 	}
 }
 
-int main() {
-	//FindTest01();
-	//FindTest02();
-	FindTest03();
-	return 0;
+void FindTest04() {
+//adjacent_find: 查找相邻重复元素, 如果面试题中遇到，直接用
+	vector<int> v;
+	v.push_back(1);
+	v.push_back(0);
+	v.push_back(2);
+	v.push_back(0);
+	v.push_back(3);
+	v.push_back(3);
+
+	auto pos = adjacent_find(v.begin(), v.end());
+	if (pos != v.end()) {
+		cout << *pos << endl;
+	}
+	else cout << "Not found." << endl;
 }
+
+//int main() {
+//	//FindTest01();
+//	//FindTest02();
+//	//FindTest03();
+//	FindTest04();
+//	return 0;
+//}

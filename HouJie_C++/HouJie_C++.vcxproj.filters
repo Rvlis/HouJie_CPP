@@ -119,5 +119,11 @@
     <ClCompile Include="查找算法.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="常用排序算法.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="集合算法交集-并集-差集.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
