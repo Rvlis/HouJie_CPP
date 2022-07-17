@@ -92,5 +92,32 @@
     <ClCompile Include="LRU-使用list+iterator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="vector-test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vector插入和删除.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="deque插入和删除.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="list构造.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="map插入和删除.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="函数对象（仿函数）.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="仿函数-谓词-一元谓词.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="遍历算法.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="查找算法.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

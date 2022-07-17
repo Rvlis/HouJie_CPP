@@ -145,19 +145,27 @@
   <ItemGroup>
     <ClCompile Include="complex-test.cpp" />
     <ClCompile Include="conversion_function.cpp" />
+    <ClCompile Include="deque插入和删除.cpp" />
     <ClCompile Include="function_template.cpp" />
+    <ClCompile Include="list构造.cpp" />
     <ClCompile Include="LRU-使用list+iterator.cpp" />
     <ClCompile Include="LRU-手写双向链表.cpp" />
+    <ClCompile Include="map插入和删除.cpp" />
     <ClCompile Include="namespace.cpp" />
     <ClCompile Include="operator_override.cpp" />
     <ClCompile Include="static_account.cpp" />
     <ClCompile Include="string-test.cpp" />
     <ClCompile Include="Test_STL.cpp" />
     <ClCompile Include="variadic_templates.cpp" />
+    <ClCompile Include="vector-test.cpp" />
+    <ClCompile Include="vector插入和删除.cpp" />
     <ClCompile Include="二进制文件-写文件.cpp" />
+    <ClCompile Include="仿函数-谓词-一元谓词.cpp" />
+    <ClCompile Include="函数对象（仿函数）.cpp" />
     <ClCompile Include="多态.cpp" />
     <ClCompile Include="文本文件-写文件.cpp" />
     <ClCompile Include="文本文件-读文件.cpp" />
+    <ClCompile Include="查找算法.cpp" />
     <ClCompile Include="类模板与继承.cpp" />
     <ClCompile Include="类模板对象作函数参数.cpp" />
     <ClCompile Include="类模板成员函数类外实现.cpp" />
@@ -166,6 +174,7 @@
     <ClCompile Include="继承方式.cpp" />
     <ClCompile Include="菱形继承和虚继承.cpp" />
     <ClCompile Include="虚析构和纯虚析构.cpp" />
+    <ClCompile Include="遍历算法.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
