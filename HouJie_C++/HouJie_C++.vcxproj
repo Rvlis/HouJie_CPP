@@ -139,22 +139,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="cat.h" />
     <ClInclude Include="complex.hpp" />
     <ClInclude Include="string.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="cat.cpp" />
     <ClCompile Include="complex-test.cpp" />
     <ClCompile Include="conversion_function.cpp" />
     <ClCompile Include="deque插入和删除.cpp" />
     <ClCompile Include="function_template.cpp" />
+    <ClCompile Include="lambda表达式匿名函数.cpp" />
     <ClCompile Include="list构造.cpp" />
     <ClCompile Include="LRU-使用list+iterator.cpp" />
     <ClCompile Include="LRU-手写双向链表.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="map插入和删除.cpp" />
     <ClCompile Include="namespace.cpp" />
     <ClCompile Include="operator_override.cpp" />
+    <ClCompile Include="SharedPtr.cpp" />
     <ClCompile Include="static_account.cpp" />
     <ClCompile Include="string-test.cpp" />
+    <ClCompile Include="test.cpp" />
     <ClCompile Include="Test_STL.cpp" />
     <ClCompile Include="variadic_templates.cpp" />
     <ClCompile Include="vector-test.cpp" />

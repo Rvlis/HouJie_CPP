@@ -69,9 +69,9 @@ void SetTest03() {
 	cout << endl;
 }
 
-int main() {
-	//SetTest01();
-	//SetTest02();
-	SetTest03();
-	return 0;
-}
+//int main() {
+//	//SetTest01();
+//	//SetTest02();
+//	SetTest03();
+//	return 0;
+//}

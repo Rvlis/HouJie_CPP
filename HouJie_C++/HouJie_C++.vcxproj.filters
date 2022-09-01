@@ -21,6 +21,9 @@
     <ClInclude Include="complex.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="cat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="complex-test.cpp">
@@ -123,6 +126,21 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="集合算法交集-并集-差集.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="cat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SharedPtr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="lambda表达式匿名函数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

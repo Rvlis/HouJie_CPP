@@ -28,33 +28,33 @@ Animal::~Animal() {
 }
 
 
-class Cat : public Animal {
-public:
-	Cat(string name) {
-		cout << "Cat 构造函数" << endl;
-		m_Name = new string(name);
-	}
-
-	//子类重写虚函数
-	void speak() {
-		cout << *m_Name << " Cat is speaking." << endl;
-	}
-
-	~Cat() {
-		cout << "Cat析构函数" << endl;
-		if (m_Name != NULL) {
-			delete m_Name;
-			m_Name = NULL;
-		}
-	}
-
-	string* m_Name;
-};
+//class Cat : public Animal {
+//public:
+//	Cat(string name) {
+//		cout << "Cat 构造函数" << endl;
+//		m_Name = new string(name);
+//	}
+//
+//	//子类重写虚函数
+//	void speak() {
+//		cout << *m_Name << " Cat is speaking." << endl;
+//	}
+//
+//	~Cat() {
+//		cout << "Cat析构函数" << endl;
+//		if (m_Name != NULL) {
+//			delete m_Name;
+//			m_Name = NULL;
+//		}
+//	}
+//
+//	string* m_Name;
+//};
 
 void test003() {
-	Animal* animal = new Cat("Tom");
-	animal->speak();
-	delete animal;
+	//Animal* animal = new Cat("Tom");
+	//animal->speak();
+	//delete animal;
 }
 
 //int main() {
